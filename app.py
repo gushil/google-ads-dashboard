@@ -32,6 +32,7 @@ LATEST = DATA_DIR / "latest.html"
 SAMPLE = Path(__file__).parent / "sample" / "sample_dashboard.html"
 REFRESH_TOKEN = os.environ.get("REFRESH_TOKEN", "")
 _refresh_lock = threading.Lock()
+_last_refresh_error: str | None = None
 
 PENDING_PAGE = """<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -50,13 +51,16 @@ endpoint.</p></div></body></html>"""
 
 
 def _do_refresh() -> None:
+    global _last_refresh_error
     if not _refresh_lock.acquire(blocking=False):
         print("[web] refresh already running; skipping.")
         return
     try:
         import run_weekly  # imported here so serving a cached page needs no Ads SDK
+        _last_refresh_error = None
         run_weekly.run()
     except Exception as e:  # noqa: BLE001
+        _last_refresh_error = str(e)
         print(f"[web] refresh failed: {e}")
     finally:
         _refresh_lock.release()
@@ -110,6 +114,7 @@ def status() -> Response:
         },
         "refresh": {
             "running": refresh_running,
+            "last_error": _last_refresh_error,
             "on_boot": os.environ.get("REFRESH_ON_BOOT", "true"),
             "scheduler": os.environ.get("RUN_SCHEDULER", "true"),
             "cron": os.environ.get("REFRESH_CRON", "0 13 * * 1"),
