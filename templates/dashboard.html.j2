@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenClinica · Paid Media Weekly — {{ data.current_window.start }} to {{ data.current_window.end }}</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --oc-yellow:#FFA800; --oc-cadmium:#F68533; --oc-blaze:#F46700; --oc-cinnabar:#F4422A;
+  --oc-cerise:#D63085; --oc-magenta:#A5009F; --oc-purple:#780F91; --oc-koamaru:#333760;
+  --oc-yankees:#272948; --oc-deep:#1C1E3E; --oc-rhythm:#7D7F91; --oc-gainsboro:#D8DCDF;
+  --oc-bright:#E3E8EC; --oc-flash:#F0F4F8; --oc-cosmic:#FFF7E8;
+  --gradient-hero:linear-gradient(135deg,#F46700 0%,#D63085 50%,#272948 100%);
+  --good:#1f8a4c; --bad:#F4422A; --flat:#7D7F91;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Outfit',sans-serif;color:var(--oc-yankees);background:var(--oc-flash);line-height:1.55;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 64px;}
+
+/* Header */
+.hero{background:var(--gradient-hero);color:#fff;padding:36px 0 30px;}
+.hero-inner{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;}
+.brand{font-weight:800;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.01em;}
+.brand span{font-weight:300;opacity:.85;}
+.eyebrow{font-weight:500;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;opacity:.9;margin-bottom:6px;}
+.hero-meta{text-align:right;font-weight:300;font-size:.85rem;opacity:.92;}
+.hero-meta strong{font-weight:600;}
+
+/* Headline banner */
+.headline{background:var(--oc-yankees);color:#fff;padding:18px 0;}
+.headline-inner{max-width:1080px;margin:0 auto;padding:0 20px;font-weight:600;font-size:clamp(1.05rem,2.2vw,1.35rem);display:flex;gap:12px;align-items:center;}
+.headline-dot{width:9px;height:9px;border-radius:50%;background:var(--oc-yellow);flex:0 0 auto;}
+
+/* KPI grid */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin:28px 0 8px;}
+.kpi{background:#fff;border:1px solid var(--oc-gainsboro);border-radius:10px;padding:16px 18px;}
+.kpi .label{font-size:.74rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--oc-rhythm);}
+.kpi .value{font-size:clamp(1.5rem,3vw,1.9rem);font-weight:800;letter-spacing:-.02em;margin:4px 0 2px;}
+.kpi .sub{font-size:.8rem;font-weight:500;}
+
+/* Cards & sections */
+section{margin-top:30px;}
+.sec-title{font-weight:700;font-size:clamp(1.2rem,2.4vw,1.5rem);display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.sec-title .bar{width:5px;height:1.1em;border-radius:3px;background:var(--oc-blaze);}
+.summary{background:#fff;border:1px solid var(--oc-gainsboro);border-left:5px solid var(--oc-blaze);border-radius:10px;padding:20px 22px;font-size:1.02rem;font-weight:400;}
+.card{background:#fff;border:1px solid var(--oc-gainsboro);border-radius:10px;padding:16px 18px;margin-bottom:12px;}
+.card h4{font-weight:700;font-size:1.02rem;margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.card .meta{font-size:.78rem;color:var(--oc-rhythm);font-weight:500;}
+.card p{font-size:.92rem;margin-top:6px;}
+.card .rec{margin-top:10px;font-size:.9rem;background:var(--oc-cosmic);border-radius:7px;padding:9px 12px;font-weight:500;}
+.card .rec b{color:var(--oc-blaze);}
+
+/* Tags */
+.tag{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:3px 9px;border-radius:5px;color:#fff;}
+.tag.high{background:var(--oc-cinnabar);} .tag.medium{background:var(--oc-cadmium);} .tag.low{background:var(--oc-rhythm);}
+.tag.up{background:var(--good);} .tag.down{background:var(--oc-cinnabar);} .tag.flat{background:var(--oc-rhythm);}
+.waste{color:var(--oc-cinnabar);font-weight:700;}
+
+/* Two-up layout for shorter sections */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:760px){.cols{grid-template-columns:1fr;}}
+
+/* Actions checklist */
+.actions{background:var(--oc-yankees);color:#fff;border-radius:10px;padding:20px 22px;}
+.actions h3{font-weight:700;margin-bottom:12px;font-size:1.15rem;}
+.action-row{display:flex;gap:12px;padding:10px 0;border-top:1px solid rgba(255,255,255,.14);}
+.action-row:first-of-type{border-top:none;}
+.chk{width:18px;height:18px;border:2px solid var(--oc-yellow);border-radius:4px;flex:0 0 auto;margin-top:3px;}
+.action-row .a-body{font-size:.94rem;}
+.action-row .a-body b{font-weight:600;}
+.action-row .a-rat{color:#cfd2e0;font-size:.83rem;}
+.pri{font-size:.66rem;font-weight:700;text-transform:uppercase;padding:2px 7px;border-radius:4px;margin-left:8px;}
+.pri.high{background:var(--oc-cinnabar);} .pri.medium{background:var(--oc-cadmium);} .pri.low{background:var(--oc-rhythm);}
+
+/* Campaign table */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--oc-gainsboro);border-radius:10px;background:#fff;}
+table{width:100%;border-collapse:collapse;font-size:.86rem;min-width:720px;}
+th{background:var(--oc-flash);text-align:right;padding:11px 12px;font-weight:600;color:var(--oc-koamaru);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--oc-gainsboro);}
+th:first-child,td:first-child{text-align:left;}
+td{padding:10px 12px;text-align:right;border-bottom:1px solid var(--oc-bright);}
+tr:last-child td{border-bottom:none;}
+td.name{font-weight:600;}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:middle;}
+.d-up{color:var(--good);font-weight:600;} .d-down{color:var(--bad);font-weight:600;} .d-flat{color:var(--flat);}
+.empty{color:var(--oc-rhythm);font-style:italic;font-size:.9rem;padding:4px 0;}
+
+footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--oc-gainsboro);color:var(--oc-rhythm);font-size:.78rem;font-weight:400;}
+footer a{color:var(--oc-blaze);text-decoration:none;font-weight:600;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Paid Media · Weekly Performance</div>
+      <div class="brand">Open<span>Clinica</span> Google Ads</div>
+    </div>
+    <div class="hero-meta">
+      <div><strong>{{ data.current_window.start }} → {{ data.current_window.end }}</strong></div>
+      <div>vs prior week {{ data.prior_window.start }} → {{ data.prior_window.end }}</div>
+      <div>Generated {{ generated_at }} by Claude</div>
+    </div>
+  </div>
+</header>
+
+<div class="headline">
+  <div class="headline-inner"><span class="headline-dot"></span>{{ insights.headline }}</div>
+</div>
+
+<div class="wrap">
+
+  <div class="kpis">
+    {{ kpi("Spend", money(data.totals.spend), data.totals.wow.spend, up_is_good=none) }}
+    {{ kpi("Leads", num(data.totals.conversions), data.totals.wow.conversions, up_is_good=true) }}
+    {{ kpi("CPL", money(data.totals.cost_per_conv), data.totals.wow.cost_per_conv, up_is_good=false) }}
+    {{ kpi("Avg CPC", money(data.totals.cpc), data.totals.wow.cpc, up_is_good=false) }}
+    {{ kpi("CPM", money(data.totals.cpm), none, up_is_good=none) }}
+    {{ kpi("CTR", pctval(data.totals.ctr), none, up_is_good=true) }}
+  </div>
+
+  <section>
+    <div class="sec-title"><span class="bar"></span>Executive Summary</div>
+    <div class="summary">{{ insights.executive_summary }}</div>
+  </section>
+
+  <section>
+    <div class="sec-title"><span class="bar" style="background:var(--oc-cinnabar)"></span>Anomalies &amp; Alerts</div>
+    {% for a in insights.anomalies %}
+    <div class="card">
+      <h4>{{ a.title }} <span class="tag {{ a.severity }}">{{ a.severity }}</span></h4>
+      <div class="meta">{{ a.campaign }}</div>
+      <p>{{ a.detail }}</p>
+    </div>
+    {% else %}<div class="empty">No anomalies detected this week.</div>{% endfor %}
+  </section>
+
+  <div class="cols">
+    <section>
+      <div class="sec-title"><span class="bar" style="background:var(--good)"></span>Top Performers</div>
+      {% for t in insights.top_performers %}
+      <div class="card">
+        <h4>{{ t.entity }} <span class="tag low" style="background:var(--good)">{{ t.level|replace("_"," ") }}</span></h4>
+        <div class="meta">{{ t.key_metric }}</div>
+        <p>{{ t.why }}</p>
+      </div>
+      {% else %}<div class="empty">No standout performers this week.</div>{% endfor %}
+    </section>
+
+    <section>
+      <div class="sec-title"><span class="bar" style="background:var(--oc-cinnabar)"></span>Underperformers</div>
+      {% for u in insights.underperformers %}
+      <div class="card">
+        <h4>{{ u.entity }} <span class="tag high">{{ u.level|replace("_"," ") }}</span></h4>
+        <p>{{ u.issue }}</p>
+        <div class="rec"><b>Review →</b> {{ u.recommendation }}</div>
+      </div>
+      {% else %}<div class="empty">No clear underperformers flagged.</div>{% endfor %}
+    </section>
+  </div>
+
+  <section>
+    <div class="sec-title"><span class="bar" style="background:var(--oc-cadmium)"></span>Budget Efficiency</div>
+    {% for b in insights.budget_inefficiencies %}
+    <div class="card">
+      <h4>{{ b.issue }}{% if b.est_monthly_waste_usd %} <span class="waste">~{{ money(b.est_monthly_waste_usd) }}/mo at risk</span>{% endif %}</h4>
+      <div class="meta">{{ b.campaign }}</div>
+      <p>{{ b.detail }}</p>
+      <div class="rec"><b>Fix →</b> {{ b.recommendation }}</div>
+    </div>
+    {% else %}<div class="empty">No material budget inefficiencies found.</div>{% endfor %}
+  </section>
+
+  <div class="cols">
+    <section>
+      <div class="sec-title"><span class="bar" style="background:var(--oc-cerise)"></span>Opportunities</div>
+      {% for o in insights.opportunities %}
+      <div class="card">
+        <h4>{{ o.title }} <span class="tag {{ o.priority }}">{{ o.priority }}</span></h4>
+        <p>{{ o.detail }}</p>
+        <div class="rec"><b>Do →</b> {{ o.recommended_action }} <span class="meta">({{ o.expected_impact }})</span></div>
+      </div>
+      {% else %}<div class="empty">No new opportunities surfaced.</div>{% endfor %}
+    </section>
+
+    <section>
+      <div class="sec-title"><span class="bar" style="background:var(--oc-yellow)"></span>Trends</div>
+      {% for t in insights.trends %}
+      <div class="card">
+        <h4>{{ {"up":"↑","down":"↓","flat":"→"}[t.direction] }} {{ t.title }} <span class="tag {{ t.direction }}">{{ t.metric }}</span></h4>
+        <p>{{ t.detail }}</p>
+      </div>
+      {% else %}<div class="empty">No notable trends.</div>{% endfor %}
+    </section>
+  </div>
+
+  <section>
+    <div class="actions">
+      <h3>Recommended Actions This Week</h3>
+      {% for r in insights.recommended_actions %}
+      <div class="action-row">
+        <div class="chk"></div>
+        <div class="a-body"><b>{{ r.action }}</b><span class="pri {{ r.priority }}">{{ r.priority }}</span><div class="a-rat">{{ r.rationale }}</div></div>
+      </div>
+      {% else %}<div style="color:#cfd2e0">No actions required — account is on track.</div>{% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-title"><span class="bar"></span>Campaign Performance</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th>Campaign</th><th>Spend</th><th>WoW</th><th>Clicks</th><th>CTR</th>
+          <th>Conv</th><th>WoW</th><th>Cost/Conv</th><th>WoW</th>
+        </tr></thead>
+        <tbody>
+        {% for c in data.campaigns %}
+          <tr>
+            <td class="name"><span class="dot" style="background:{{ channel_color(c.campaign) }}"></span>{{ c.campaign }}</td>
+            <td>{{ money(c.cost) }}</td>
+            <td>{{ delta(c.wow.cost, up_is_good=none) }}</td>
+            <td>{{ num(c.clicks) }}</td>
+            <td>{{ pctval(c.ctr) }}</td>
+            <td>{{ num(c.conversions) }}</td>
+            <td>{{ delta(c.wow.conversions, up_is_good=true) }}</td>
+            <td>{{ money(c.cost_per_conv) }}</td>
+            <td>{{ delta(c.wow.cost_per_conv, up_is_good=false) }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  {% if data.ad_groups %}
+  <section>
+    <div class="sec-title"><span class="bar" style="background:var(--oc-koamaru)"></span>Ad Group Performance <span class="meta" style="font-weight:500;font-size:.8rem;align-self:center">top {{ data.ad_groups[:12]|length }} by spend</span></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th>Ad Group</th><th>Campaign</th><th>Spend</th><th>Clicks</th><th>CTR</th>
+          <th>Leads</th><th>CPL</th><th>WoW CPL</th>
+        </tr></thead>
+        <tbody>
+        {% for a in data.ad_groups[:12] %}
+          <tr>
+            <td class="name">{{ a.ad_group }}</td>
+            <td style="text-align:left;color:var(--oc-rhythm)">{{ a.campaign }}</td>
+            <td>{{ money(a.cost) }}</td>
+            <td>{{ num(a.clicks) }}</td>
+            <td>{{ pctval(a.ctr) }}</td>
+            <td>{{ num(a.conversions) }}</td>
+            <td>{{ money(a.cost_per_conv) }}</td>
+            <td>{{ delta(a.wow.cost_per_conv, up_is_good=false) }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  {% endif %}
+
+  <footer>
+    Source: Google Ads API · consolidated in <a href="{{ sheet_url }}">Google Sheets</a> ·
+    analysis generated by Claude ({{ model }}). Figures cover the 7 days ending {{ data.current_window.end }};
+    week-over-week (WoW) compares to the preceding 7 days. This is an automated report — verify before acting on material spend changes.
+  </footer>
+
+</div>
+</body>
+</html>

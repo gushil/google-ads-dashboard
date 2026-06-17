@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenClinica · Paid Media Weekly — 2026-06-09 to 2026-06-15</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --oc-yellow:#FFA800; --oc-cadmium:#F68533; --oc-blaze:#F46700; --oc-cinnabar:#F4422A;
+  --oc-cerise:#D63085; --oc-magenta:#A5009F; --oc-purple:#780F91; --oc-koamaru:#333760;
+  --oc-yankees:#272948; --oc-deep:#1C1E3E; --oc-rhythm:#7D7F91; --oc-gainsboro:#D8DCDF;
+  --oc-bright:#E3E8EC; --oc-flash:#F0F4F8; --oc-cosmic:#FFF7E8;
+  --gradient-hero:linear-gradient(135deg,#F46700 0%,#D63085 50%,#272948 100%);
+  --good:#1f8a4c; --bad:#F4422A; --flat:#7D7F91;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Outfit',sans-serif;color:var(--oc-yankees);background:var(--oc-flash);line-height:1.55;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 64px;}
+
+/* Header */
+.hero{background:var(--gradient-hero);color:#fff;padding:36px 0 30px;}
+.hero-inner{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;}
+.brand{font-weight:800;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.01em;}
+.brand span{font-weight:300;opacity:.85;}
+.eyebrow{font-weight:500;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;opacity:.9;margin-bottom:6px;}
+.hero-meta{text-align:right;font-weight:300;font-size:.85rem;opacity:.92;}
+.hero-meta strong{font-weight:600;}
+
+/* Headline banner */
+.headline{background:var(--oc-yankees);color:#fff;padding:18px 0;}
+.headline-inner{max-width:1080px;margin:0 auto;padding:0 20px;font-weight:600;font-size:clamp(1.05rem,2.2vw,1.35rem);display:flex;gap:12px;align-items:center;}
+.headline-dot{width:9px;height:9px;border-radius:50%;background:var(--oc-yellow);flex:0 0 auto;}
+
+/* KPI grid */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin:28px 0 8px;}
+.kpi{background:#fff;border:1px solid var(--oc-gainsboro);border-radius:10px;padding:16px 18px;}
+.kpi .label{font-size:.74rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--oc-rhythm);}
+.kpi .value{font-size:clamp(1.5rem,3vw,1.9rem);font-weight:800;letter-spacing:-.02em;margin:4px 0 2px;}
+.kpi .sub{font-size:.8rem;font-weight:500;}
+
+/* Cards & sections */
+section{margin-top:30px;}
+.sec-title{font-weight:700;font-size:clamp(1.2rem,2.4vw,1.5rem);display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.sec-title .bar{width:5px;height:1.1em;border-radius:3px;background:var(--oc-blaze);}
+.summary{background:#fff;border:1px solid var(--oc-gainsboro);border-left:5px solid var(--oc-blaze);border-radius:10px;padding:20px 22px;font-size:1.02rem;font-weight:400;}
+.card{background:#fff;border:1px solid var(--oc-gainsboro);border-radius:10px;padding:16px 18px;margin-bottom:12px;}
+.card h4{font-weight:700;font-size:1.02rem;margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.card .meta{font-size:.78rem;color:var(--oc-rhythm);font-weight:500;}
+.card p{font-size:.92rem;margin-top:6px;}
+.card .rec{margin-top:10px;font-size:.9rem;background:var(--oc-cosmic);border-radius:7px;padding:9px 12px;font-weight:500;}
+.card .rec b{color:var(--oc-blaze);}
+
+/* Tags */
+.tag{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:3px 9px;border-radius:5px;color:#fff;}
+.tag.high{background:var(--oc-cinnabar);} .tag.medium{background:var(--oc-cadmium);} .tag.low{background:var(--oc-rhythm);}
+.tag.up{background:var(--good);} .tag.down{background:var(--oc-cinnabar);} .tag.flat{background:var(--oc-rhythm);}
+.waste{color:var(--oc-cinnabar);font-weight:700;}
+
+/* Two-up layout for shorter sections */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:760px){.cols{grid-template-columns:1fr;}}
+
+/* Actions checklist */
+.actions{background:var(--oc-yankees);color:#fff;border-radius:10px;padding:20px 22px;}
+.actions h3{font-weight:700;margin-bottom:12px;font-size:1.15rem;}
+.action-row{display:flex;gap:12px;padding:10px 0;border-top:1px solid rgba(255,255,255,.14);}
+.action-row:first-of-type{border-top:none;}
+.chk{width:18px;height:18px;border:2px solid var(--oc-yellow);border-radius:4px;flex:0 0 auto;margin-top:3px;}
+.action-row .a-body{font-size:.94rem;}
+.action-row .a-body b{font-weight:600;}
+.action-row .a-rat{color:#cfd2e0;font-size:.83rem;}
+.pri{font-size:.66rem;font-weight:700;text-transform:uppercase;padding:2px 7px;border-radius:4px;margin-left:8px;}
+.pri.high{background:var(--oc-cinnabar);} .pri.medium{background:var(--oc-cadmium);} .pri.low{background:var(--oc-rhythm);}
+
+/* Campaign table */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--oc-gainsboro);border-radius:10px;background:#fff;}
+table{width:100%;border-collapse:collapse;font-size:.86rem;min-width:720px;}
+th{background:var(--oc-flash);text-align:right;padding:11px 12px;font-weight:600;color:var(--oc-koamaru);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--oc-gainsboro);}
+th:first-child,td:first-child{text-align:left;}
+td{padding:10px 12px;text-align:right;border-bottom:1px solid var(--oc-bright);}
+tr:last-child td{border-bottom:none;}
+td.name{font-weight:600;}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:middle;}
+.d-up{color:var(--good);font-weight:600;} .d-down{color:var(--bad);font-weight:600;} .d-flat{color:var(--flat);}
+.empty{color:var(--oc-rhythm);font-style:italic;font-size:.9rem;padding:4px 0;}
+
+footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--oc-gainsboro);color:var(--oc-rhythm);font-size:.78rem;font-weight:400;}
+footer a{color:var(--oc-blaze);text-decoration:none;font-weight:600;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Paid Media · Weekly Performance</div>
+      <div class="brand">Open<span>Clinica</span> Google Ads</div>
+    </div>
+    <div class="hero-meta">
+      <div><strong>2026-06-09 → 2026-06-15</strong></div>
+      <div>vs prior week 2026-06-02 → 2026-06-08</div>
+      <div>Generated Jun 17, 2026 14:09 by Claude</div>
+    </div>
+  </div>
+</header>
+
+<div class="headline">
+  <div class="headline-inner"><span class="headline-dot"></span>Spend up 21% but leads slipped 4% — CPL inefficiency concentrated in Competitor &amp; CTMS</div>
+</div>
+
+<div class="wrap">
+
+  <div class="kpis">
+    <div class="kpi"><div class="label">Spend</div><div class="value">$16,190</div><div class="sub"><span class="d-flat">↑ 27.4%</span> <span class="meta" style="color:var(--oc-rhythm);font-weight:500">vs last wk</span></div></div>
+    <div class="kpi"><div class="label">Leads</div><div class="value">44</div><div class="sub"><span class="d-down">↓ 4.3%</span> <span class="meta" style="color:var(--oc-rhythm);font-weight:500">vs last wk</span></div></div>
+    <div class="kpi"><div class="label">CPL</div><div class="value">$367.95</div><div class="sub"><span class="d-down">↑ 33.2%</span> <span class="meta" style="color:var(--oc-rhythm);font-weight:500">vs last wk</span></div></div>
+    <div class="kpi"><div class="label">Avg CPC</div><div class="value">$3.93</div><div class="sub"><span class="d-down">↑ 10.8%</span> <span class="meta" style="color:var(--oc-rhythm);font-weight:500">vs last wk</span></div></div>
+    <div class="kpi"><div class="label">CPM</div><div class="value">$73.37</div><div class="sub"><span class="d-flat">—</span> <span class="meta" style="color:var(--oc-rhythm);font-weight:500">vs last wk</span></div></div>
+    <div class="kpi"><div class="label">CTR</div><div class="value">1.87%</div><div class="sub"><span class="d-flat">—</span> <span class="meta" style="color:var(--oc-rhythm);font-weight:500">vs last wk</span></div></div>
+  </div>
+
+  <section>
+    <div class="sec-title"><span class="bar"></span>Executive Summary</div>
+    <div class="summary">Total spend rose to $16,190 (+21% WoW) while qualified leads fell to 44 (−4%), pushing blended CPL to $368 — 145% above the $150 target. The damage is concentrated: Competitor – Medidata absorbed $5,040 (+53%) for 2 leads, and its &#39;broad – medidata alternative&#39; ad group alone burned $3,640 for a single lead. Brand and eConsent are the bright spots and are budget-capped. Shifting ~$2,000/week from Competitor to eConsent and Brand should recover lead volume at no extra spend.</div>
+  </section>
+
+  <section>
+    <div class="sec-title"><span class="bar" style="background:var(--oc-cinnabar)"></span>Anomalies &amp; Alerts</div>
+    
+    <div class="card">
+      <h4>Spend +53% with leads down to 2 <span class="tag high">high</span></h4>
+      <div class="meta">Competitor – Medidata</div>
+      <p>Cost jumped $3,290 → $5,040 while leads fell 3 → 2 (CPL $2,520). No documented bid/budget change — check for an auction shift or broad-match query expansion.</p>
+    </div>
+    
+    <div class="card">
+      <h4>Leads dropped 27% on higher spend <span class="tag medium">medium</span></h4>
+      <div class="meta">EDC Software</div>
+      <p>Spend +16% but leads 15 → 11. CTR held, so the loss is post-click — review landing page or form changes from the last 10 days.</p>
+    </div>
+    
+  </section>
+
+  <div class="cols">
+    <section>
+      <div class="sec-title"><span class="bar" style="background:var(--good)"></span>Top Performers</div>
+      
+      <div class="card">
+        <h4>Brand – OpenClinica <span class="tag low" style="background:var(--good)">campaign</span></h4>
+        <div class="meta">CPL $22.74 · 14 leads</div>
+        <p>Most efficient line by 6x; CTR climbing to 6.7%. Capped at $40/day, so it&#39;s leaving cheap leads on the table.</p>
+      </div>
+      
+      <div class="card">
+        <h4>Exact – econsent platform <span class="tag low" style="background:var(--good)">ad group</span></h4>
+        <div class="meta">CPL $230 · 5 leads</div>
+        <p>Tight exact-match ad group beating target inside eConsent; the scalable core of that campaign.</p>
+      </div>
+      
+      <div class="card">
+        <h4>eConsent Solutions <span class="tag low" style="background:var(--good)">campaign</span></h4>
+        <div class="meta">CPL $285 · 7 leads (+17%)</div>
+        <p>Near target and growing while losing impression share to budget (search IS 58%) — clear headroom.</p>
+      </div>
+      
+    </section>
+
+    <section>
+      <div class="sec-title"><span class="bar" style="background:var(--oc-cinnabar)"></span>Underperformers</div>
+      
+      <div class="card">
+        <h4>Broad – medidata alternative <span class="tag high">ad group</span></h4>
+        <p>$3,640 for 1 lead (CPL $3,640) — the single worst unit in the account.</p>
+        <div class="rec"><b>Review →</b> Pause or convert to phrase/exact on the 2 converting terms; add competitor product-line negatives.</div>
+      </div>
+      
+      <div class="card">
+        <h4>CTMS / Clinical Trial Mgmt <span class="tag high">campaign</span></h4>
+        <p>$2,310 for 4 leads (CPL $578) with healthy impression share — a relevance problem, not a cap.</p>
+        <div class="rec"><b>Review →</b> Audit search terms for off-intent queries; shift 30% of budget to EDC, which converts at ~half the CPL.</div>
+      </div>
+      
+    </section>
+  </div>
+
+  <section>
+    <div class="sec-title"><span class="bar" style="background:var(--oc-cadmium)"></span>Budget Efficiency</div>
+    
+    <div class="card">
+      <h4>CPL 16x over target <span class="waste">~$18,000/mo at risk</span></h4>
+      <div class="meta">Competitor – Medidata</div>
+      <p>$5,040 for 2 leads ($2,520 CPL vs $150 target); ~$20k/mo run-rate for ~8 leads.</p>
+      <div class="rec"><b>Fix →</b> Cap daily budget at $80, tighten to exact/phrase on the 3 best terms, add negatives, reallocate to eConsent.</div>
+    </div>
+    
+    <div class="card">
+      <h4>Spend +17% with only 4 leads <span class="waste">~$6,000/mo at risk</span></h4>
+      <div class="meta">CTMS / Clinical Trial Mgmt</div>
+      <p>$2,310 for 4 leads ($578 CPL). Impression share is healthy (33%), so this is relevance/landing, not a cap.</p>
+      <div class="rec"><b>Fix →</b> Pause the lowest-CTR ad group and move 30% of budget to EDC.</div>
+    </div>
+    
+  </section>
+
+  <div class="cols">
+    <section>
+      <div class="sec-title"><span class="bar" style="background:var(--oc-cerise)"></span>Opportunities</div>
+      
+      <div class="card">
+        <h4>eConsent is budget-capped while hitting target <span class="tag high">high</span></h4>
+        <p>7 leads at $285 CPL with meaningful impression share lost to budget (search IS 58%).</p>
+        <div class="rec"><b>Do →</b> Raise daily budget $120 → $170 and re-test top-of-page bids. <span class="meta">(≈ +3–4 leads/week at/near target CPL)</span></div>
+      </div>
+      
+      <div class="card">
+        <h4>Protect and scale Brand <span class="tag medium">medium</span></h4>
+        <p>Brand converts at $22.74 — 6x more efficient than blended — and is capped at $40/day.</p>
+        <div class="rec"><b>Do →</b> Lift Brand to $60/day, confirm 100% IS, add conquesting sitelinks. <span class="meta">(Cheap incremental leads; defends against competitor brand bidding)</span></div>
+      </div>
+      
+      <div class="card">
+        <h4>Account-wide match-type + negatives audit <span class="tag medium">medium</span></h4>
+        <p>Both major CPL problems trace to broad reach; a match-type tightening is the fastest lever.</p>
+        <div class="rec"><b>Do →</b> Move broad terms with CPL &gt; 2x target to phrase/exact; layer negatives. <span class="meta">(Est. 10–15% blended CPL reduction in two weeks)</span></div>
+      </div>
+      
+    </section>
+
+    <section>
+      <div class="sec-title"><span class="bar" style="background:var(--oc-yellow)"></span>Trends</div>
+      
+      <div class="card">
+        <h4>↑ Spend outpacing leads a third straight week <span class="tag up">spend</span></h4>
+        <p>Spend +21% WoW while leads −4%; the gap has widened each of the last three weeks — efficiency erosion, not a blip.</p>
+      </div>
+      
+      <div class="card">
+        <h4>↑ Blended CPC creeping up <span class="tag up">cpc</span></h4>
+        <p>Average CPC rose ~9% as Competitor broad-match auctions got more expensive; watch for further inflation.</p>
+      </div>
+      
+      <div class="card">
+        <h4>→ Display (DCT) reach up, value flat <span class="tag flat">conversions</span></h4>
+        <p>DCT impressions +45% but still 1 lead — useful for awareness, not yet pipeline.</p>
+      </div>
+      
+    </section>
+  </div>
+
+  <section>
+    <div class="actions">
+      <h3>Recommended Actions This Week</h3>
+      
+      <div class="action-row">
+        <div class="chk"></div>
+        <div class="a-body"><b>Cap Competitor – Medidata at $80/day; reallocate to eConsent</b><span class="pri high">high</span><div class="a-rat">Largest single source of waste; net-neutral on spend, lead-positive.</div></div>
+      </div>
+      
+      <div class="action-row">
+        <div class="chk"></div>
+        <div class="a-body"><b>Raise eConsent budget to $170/day</b><span class="pri high">high</span><div class="a-rat">On-target campaign losing volume purely to a budget cap.</div></div>
+      </div>
+      
+      <div class="action-row">
+        <div class="chk"></div>
+        <div class="a-body"><b>Investigate EDC Software lead drop (landing/form)</b><span class="pri medium">medium</span><div class="a-rat">CTR steady but leads −27% points to a post-click regression.</div></div>
+      </div>
+      
+      <div class="action-row">
+        <div class="chk"></div>
+        <div class="a-body"><b>Run an account-wide match-type + negatives audit</b><span class="pri medium">medium</span><div class="a-rat">Addresses the root cause behind both major CPL anomalies.</div></div>
+      </div>
+      
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-title"><span class="bar"></span>Campaign Performance</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th>Campaign</th><th>Spend</th><th>WoW</th><th>Clicks</th><th>CTR</th>
+          <th>Conv</th><th>WoW</th><th>Cost/Conv</th><th>WoW</th>
+        </tr></thead>
+        <tbody>
+        
+          <tr>
+            <td class="name"><span class="dot" style="background:#F46700"></span>Brand – OpenClinica</td>
+            <td>$318.40</td>
+            <td><span class="d-flat">↑ 11.3%</span></td>
+            <td>612</td>
+            <td>6.71%</td>
+            <td>14</td>
+            <td><span class="d-up">↑ 16.7%</span></td>
+            <td>$22.74</td>
+            <td><span class="d-up">↓ 4.6%</span></td>
+          </tr>
+        
+          <tr>
+            <td class="name"><span class="dot" style="background:#F68533"></span>EDC Software</td>
+            <td>$4,185</td>
+            <td><span class="d-flat">↑ 15.6%</span></td>
+            <td>980</td>
+            <td>2.38%</td>
+            <td>11</td>
+            <td><span class="d-down">↓ 26.7%</span></td>
+            <td>$380.45</td>
+            <td><span class="d-down">↑ 57.6%</span></td>
+          </tr>
+        
+          <tr>
+            <td class="name"><span class="dot" style="background:#A5009F"></span>eConsent Solutions</td>
+            <td>$1,996</td>
+            <td><span class="d-flat">↑ 16.8%</span></td>
+            <td>430</td>
+            <td>2.31%</td>
+            <td>7</td>
+            <td><span class="d-up">↑ 16.7%</span></td>
+            <td>$285.21</td>
+            <td><span class="d-down">↑ 0.1%</span></td>
+          </tr>
+        
+          <tr>
+            <td class="name"><span class="dot" style="background:#333760"></span>CTMS / Clinical Trial Mgmt</td>
+            <td>$2,310</td>
+            <td><span class="d-flat">↑ 16.7%</span></td>
+            <td>510</td>
+            <td>2.28%</td>
+            <td>4</td>
+            <td><span class="d-down">↓ 20.0%</span></td>
+            <td>$577.50</td>
+            <td><span class="d-down">↑ 45.8%</span></td>
+          </tr>
+        
+          <tr>
+            <td class="name"><span class="dot" style="background:#FFA800"></span>ePRO / eCOA</td>
+            <td>$1,422</td>
+            <td><span class="d-flat">↑ 17.5%</span></td>
+            <td>360</td>
+            <td>2.52%</td>
+            <td>5</td>
+            <td><span class="d-up">↑ 25.0%</span></td>
+            <td>$284.40</td>
+            <td><span class="d-up">↓ 6.0%</span></td>
+          </tr>
+        
+          <tr>
+            <td class="name"><span class="dot" style="background:#7D7F91"></span>Competitor – Medidata</td>
+            <td>$5,040</td>
+            <td><span class="d-flat">↑ 53.2%</span></td>
+            <td>690</td>
+            <td>2.57%</td>
+            <td>2</td>
+            <td><span class="d-down">↓ 33.3%</span></td>
+            <td>$2,520</td>
+            <td><span class="d-down">↑ 129.8%</span></td>
+          </tr>
+        
+          <tr>
+            <td class="name"><span class="dot" style="background:#333760"></span>Decentralized Trials (DCT)</td>
+            <td>$918.00</td>
+            <td><span class="d-flat">↑ 50.0%</span></td>
+            <td>540</td>
+            <td>0.61%</td>
+            <td>1</td>
+            <td><span class="d-flat">→ 0.0%</span></td>
+            <td>$918.00</td>
+            <td><span class="d-down">↑ 50.0%</span></td>
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  
+  <section>
+    <div class="sec-title"><span class="bar" style="background:var(--oc-koamaru)"></span>Ad Group Performance <span class="meta" style="font-weight:500;font-size:.8rem;align-self:center">top 9 by spend</span></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th>Ad Group</th><th>Campaign</th><th>Spend</th><th>Clicks</th><th>CTR</th>
+          <th>Leads</th><th>CPL</th><th>WoW CPL</th>
+        </tr></thead>
+        <tbody>
+        
+          <tr>
+            <td class="name">Phrase – edc software</td>
+            <td style="text-align:left;color:var(--oc-rhythm)">EDC Software</td>
+            <td>$2,160</td>
+            <td>540</td>
+            <td>2.44%</td>
+            <td>8</td>
+            <td>$270.00</td>
+            <td><span class="d-down">↑ 50.0%</span></td>
+          </tr>
+        
+          <tr>
+            <td class="name">Broad – clinical data capture</td>
+            <td style="text-align:left;color:var(--oc-rhythm)">EDC Software</td>
+            <td>$2,025</td>
+            <td>440</td>
+            <td>2.30%</td>
+            <td>3</td>
+            <td>$675.00</td>
+            <td><span class="d-down">↑ 64.6%</span></td>
+          </tr>
+        
+          <tr>
+            <td class="name">Exact – econsent platform</td>
+            <td style="text-align:left;color:var(--oc-rhythm)">eConsent Solutions</td>
+            <td>$1,150</td>
+            <td>250</td>
+            <td>2.40%</td>
+            <td>5</td>
+            <td>$230.00</td>
+            <td><span class="d-up">↓ 6.1%</span></td>
+          </tr>
+        
+          <tr>
+            <td class="name">Phrase – electronic consent</td>
+            <td style="text-align:left;color:var(--oc-rhythm)">eConsent Solutions</td>
+            <td>$846.50</td>
+            <td>180</td>
+            <td>2.20%</td>
+            <td>2</td>
+            <td>$423.25</td>
+            <td><span class="d-down">↑ 16.0%</span></td>
+          </tr>
+        
+          <tr>
+            <td class="name">Broad – medidata alternative</td>
+            <td style="text-align:left;color:var(--oc-rhythm)">Competitor – Medidata</td>
+            <td>$3,640</td>
+            <td>470</td>
+            <td>2.49%</td>
+            <td>1</td>
+            <td>$3,640</td>
+            <td><span class="d-down">↑ 229.4%</span></td>
+          </tr>
+        
+          <tr>
+            <td class="name">Exact – medidata competitor</td>
+            <td style="text-align:left;color:var(--oc-rhythm)">Competitor – Medidata</td>
+            <td>$1,400</td>
+            <td>220</td>
+            <td>2.78%</td>
+            <td>1</td>
+            <td>$1,400</td>
+            <td><span class="d-down">↑ 29.6%</span></td>
+          </tr>
+        
+          <tr>
+            <td class="name">Brand – core terms</td>
+            <td style="text-align:left;color:var(--oc-rhythm)">Brand – OpenClinica</td>
+            <td>$318.40</td>
+            <td>612</td>
+            <td>6.71%</td>
+            <td>14</td>
+            <td>$22.74</td>
+            <td><span class="d-up">↓ 4.6%</span></td>
+          </tr>
+        
+          <tr>
+            <td class="name">Broad – ctms software</td>
+            <td style="text-align:left;color:var(--oc-rhythm)">CTMS / Clinical Trial Mgmt</td>
+            <td>$2,310</td>
+            <td>510</td>
+            <td>2.28%</td>
+            <td>4</td>
+            <td>$577.50</td>
+            <td><span class="d-down">↑ 45.8%</span></td>
+          </tr>
+        
+          <tr>
+            <td class="name">Phrase – epro solution</td>
+            <td style="text-align:left;color:var(--oc-rhythm)">ePRO / eCOA</td>
+            <td>$1,422</td>
+            <td>360</td>
+            <td>2.52%</td>
+            <td>5</td>
+            <td>$284.40</td>
+            <td><span class="d-up">↓ 6.0%</span></td>
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+
+  <footer>
+    Source: Google Ads API · consolidated in <a href="https://docs.google.com/spreadsheets/d/EXAMPLE_SHEET_ID">Google Sheets</a> ·
+    analysis generated by Claude (claude-sonnet-4-6). Figures cover the 7 days ending 2026-06-15;
+    week-over-week (WoW) compares to the preceding 7 days. This is an automated report — verify before acting on material spend changes.
+  </footer>
+
+</div>
+</body>
+</html>

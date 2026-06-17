@@ -1,0 +1,13 @@
+# Railway service config. Build is auto-detected (Nixpacks reads requirements.txt).
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "gunicorn app:app --workers 1 --timeout 300 --bind 0.0.0.0:$PORT"
+healthcheckPath = "/healthz"
+healthcheckTimeout = 30
+restartPolicyType = "on_failure"
+
+# Mount a persistent volume at /data and set DATA_DIR=/data so the rendered
+# dashboard survives redeploys. Single worker keeps the in-process weekly
+# scheduler from double-firing.
