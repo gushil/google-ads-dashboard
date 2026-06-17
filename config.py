@@ -35,7 +35,7 @@ class Config:
     google_sa_file: str = field(default_factory=lambda: _env("GOOGLE_SA_FILE", "service_account.json"))
 
     # --- Anthropic ---
-    anthropic_api_key: str = field(default_factory=lambda: _env("ANTHROPIC_API_KEY", required=True))
+    anthropic_api_key: str = field(default_factory=lambda: _env("ANTHROPIC_API_KEY", ""))
     model: str = field(default_factory=lambda: _env("CLAUDE_MODEL", "claude-sonnet-4-6"))
 
     # --- Email delivery (SMTP, provider-agnostic) ---

@@ -122,6 +122,8 @@ def _parse(text: str) -> dict[str, Any] | None:
 
 
 def generate(cfg, data: dict[str, Any]) -> dict[str, Any]:
+    if not cfg.anthropic_api_key:
+        return _EMPTY
     client = anthropic.Anthropic(api_key=cfg.anthropic_api_key)
     user_msg = _user_payload(cfg, data)
 
