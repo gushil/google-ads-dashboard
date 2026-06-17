@@ -29,6 +29,7 @@ from flask import Flask, Response, abort, request
 app = Flask(__name__)
 DATA_DIR = Path(os.environ.get("DATA_DIR", "output"))
 LATEST = DATA_DIR / "latest.html"
+SAMPLE = Path(__file__).parent / "sample" / "sample_dashboard.html"
 REFRESH_TOKEN = os.environ.get("REFRESH_TOKEN", "")
 _refresh_lock = threading.Lock()
 
@@ -65,6 +66,8 @@ def _do_refresh() -> None:
 def index() -> Response:
     if LATEST.exists():
         return Response(LATEST.read_text(encoding="utf-8"), mimetype="text/html")
+    if SAMPLE.exists():
+        return Response(SAMPLE.read_text(encoding="utf-8"), mimetype="text/html")
     return Response(PENDING_PAGE, mimetype="text/html")
 
 
