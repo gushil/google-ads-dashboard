@@ -84,6 +84,51 @@ def healthz() -> Response:
     return Response('{"ok":true}', mimetype="application/json")
 
 
+@app.get("/status")
+def status() -> Response:
+    import datetime
+    import json
+
+    def _check(key):
+        return "set" if os.environ.get(key) else "missing"
+
+    acquired = _refresh_lock.acquire(blocking=False)
+    if acquired:
+        _refresh_lock.release()
+    refresh_running = not acquired
+
+    latest_written = None
+    if LATEST.exists():
+        mtime = LATEST.stat().st_mtime
+        latest_written = datetime.datetime.utcfromtimestamp(mtime).strftime("%Y-%m-%d %H:%M:%S UTC")
+
+    payload = {
+        "dashboard": {
+            "latest_html": "exists" if LATEST.exists() else "missing",
+            "last_written": latest_written,
+            "data_dir": str(DATA_DIR),
+        },
+        "refresh": {
+            "running": refresh_running,
+            "on_boot": os.environ.get("REFRESH_ON_BOOT", "true"),
+            "scheduler": os.environ.get("RUN_SCHEDULER", "true"),
+            "cron": os.environ.get("REFRESH_CRON", "0 13 * * 1"),
+        },
+        "env": {
+            "GADS_DEVELOPER_TOKEN": _check("GADS_DEVELOPER_TOKEN"),
+            "GADS_CLIENT_ID": _check("GADS_CLIENT_ID"),
+            "GADS_CLIENT_SECRET": _check("GADS_CLIENT_SECRET"),
+            "GADS_REFRESH_TOKEN": _check("GADS_REFRESH_TOKEN"),
+            "GADS_CUSTOMER_ID": _check("GADS_CUSTOMER_ID"),
+            "SHEET_ID": _check("SHEET_ID"),
+            "GOOGLE_SA_JSON": _check("GOOGLE_SA_JSON"),
+            "ANTHROPIC_API_KEY": _check("ANTHROPIC_API_KEY"),
+            "REFRESH_TOKEN": _check("REFRESH_TOKEN"),
+        },
+    }
+    return Response(json.dumps(payload, indent=2), mimetype="application/json")
+
+
 def _start_scheduler() -> None:
     if os.environ.get("RUN_SCHEDULER", "true").lower() != "true":
         return
