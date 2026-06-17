@@ -93,7 +93,7 @@ def _start_scheduler() -> None:
                   max_instances=1, coalesce=True)
     sched.start()
     print(f"[web] scheduler started (cron='{cron}' UTC)")
-    if os.environ.get("REFRESH_ON_BOOT", "false").lower() == "true" and not LATEST.exists():
+    if os.environ.get("REFRESH_ON_BOOT", "true").lower() == "true" and not LATEST.exists():
         threading.Thread(target=_do_refresh, daemon=True).start()
 
 
